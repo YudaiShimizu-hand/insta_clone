@@ -1,10 +1,23 @@
-= form_with model: @user, local: true do |f|
- = f.label :name
- = f.text_field :name
- = f.label :email
- = f.text_field :email
- = f.label :password
- = f.password_field :password
- = f.label :password_confirmation
- = f.password_field :password_confirmation
- = f.submit '登録'
+.login-register-form
+  .login-register-form-inner
+    .card.mb-3
+      = form_with model: @user, class: 'card-body', local: true do |f|
+        .form-group
+          = f.label :name, class: 'bmd-label-floating'
+          = f.text_field :name, class: 'form-control'
+        .form-group
+          = f.label :email, class: 'bmd-label-floating'
+          = f.email_field :email, class: 'form-control'
+        .form-group
+          = f.label :password, class: 'bmd-label-floating'
+          = f.password_field :password, class: 'form-control'
+        .form-group
+          = f.label :password_confirmation, class: 'bmd-label-floating'
+          = f.password_field :password_confirmation, class: 'form-control'
+
+        = f.submit '登録', class: 'btn btn-raised btn-primary'
+
+    .card
+      .card-body
+        | アカウントをお持ちですか
+        = link_to 'ログインする', login_path

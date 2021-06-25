@@ -68,4 +68,5 @@ gem 'sorcery'
 gem 'rails-i18n'
 gem 'redis-rails'
 gem 'annotate'
+gem 'font-awesome-sass'
 
