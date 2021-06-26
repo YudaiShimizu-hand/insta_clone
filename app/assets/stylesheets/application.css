@@ -13,7 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
- @import 'bootstrap-material-design/dist/css/bootstrap-material-design';
- @import 'font-awesome-sprockets';
- @import 'font-awesome';
