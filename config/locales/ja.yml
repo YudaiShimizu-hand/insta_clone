@@ -1,0 +1,7 @@
+ja:
+ user_sessions:
+  new:
+    name: '名前'
+    email: 'メールアドレス'
+    password: 'パスワード'
+
