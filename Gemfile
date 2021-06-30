@@ -47,6 +47,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
+  gem 'rubocop-rails', require:false
+  gem 'rubocop-performance', require:false
   gem 'better_errors'
   gem 'binding_of_caller'
 end
@@ -69,4 +71,6 @@ gem 'rails-i18n'
 gem 'redis-rails'
 gem 'annotate'
 gem 'font-awesome-sass'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
