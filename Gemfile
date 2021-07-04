@@ -73,4 +73,8 @@ gem 'annotate'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'faker'
+gem 'carrierwave'
+gem 'mini_magick'
+
 
