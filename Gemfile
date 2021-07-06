@@ -74,7 +74,7 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'faker'
-gem 'carrierwave'
+gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 
 

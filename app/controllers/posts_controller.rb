@@ -45,6 +45,6 @@ class PostsController < ApplicationController
 
     def post_params
         # images:[]とすることで、JSON形式でparamsを受け取る
-        params.require(:post).permit(:body, images: [])
+        params.require(:post).permit(:body, {images: []})
     end
 end

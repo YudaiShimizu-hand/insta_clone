@@ -320,7 +320,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
-  carrierwave
+  carrierwave (~> 2.0)
   chromedriver-helper
   faker
   font-awesome-sass
