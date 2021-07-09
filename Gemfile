@@ -76,5 +76,6 @@ gem 'jquery-ui-rails'
 gem 'faker'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
+gem 'popper_js'
 
 
