@@ -1,5 +1,2 @@
-- if @comment.errors.present?
-  | alert("#{@comment.errors.full_messages.join('\n')}");
-- else
-  | $('#comment-text').prepend("#{j render('comments/comment', comment: @comment)}");
-  | $('.input-comment-body').val('');
+ |  $('#comment-text').prepend("#{j render('comments/comment', comment: @comment)}");
+ |  $('.input-comment-body').val('');
