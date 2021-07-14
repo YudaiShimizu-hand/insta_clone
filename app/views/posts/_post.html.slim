@@ -1,6 +1,7 @@
 .card.mb-5.post
   .card-header
     .d-flex.align-items-center
+     = link_to user_path(post.user) do 
       = image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circle mr-1'
       = post.user.name
       - if current_user&.own?(post)

@@ -9,7 +9,9 @@ delete '/logout', to: 'user_sessions#destroy'
 
 
 
-resources :users, only: %i[new create]
+resources :users
+resources :relationships, only: [:create, :destroy]
+
 resources :posts, shallow: true do
   resources :comments
   resources :likes
