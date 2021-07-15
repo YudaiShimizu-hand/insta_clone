@@ -34,6 +34,8 @@ class User < ApplicationRecord
   foreign_key: 'follower_id', dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
 
+  scope :recent, ->(count) { order(created_at: :desc).limit(count) }
+
   def own?(object)
     id == object.user_id
   end
@@ -73,5 +75,9 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
-  
+
+  def feed
+    Post.where(user_id: following_ids << id)
+  end
+
 end

@@ -7,14 +7,15 @@ post '/login', to: 'user_sessions#create'
 delete '/logout', to: 'user_sessions#destroy'
 
 
-
-
 resources :users
 resources :relationships, only: [:create, :destroy]
 
 resources :posts, shallow: true do
   resources :comments
   resources :likes
+  collection do
+    get :like_posts
+  end
 end
 
 end

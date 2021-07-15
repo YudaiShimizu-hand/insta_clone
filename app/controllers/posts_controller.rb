@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
     def index 
-        @posts = Post.all.includes(:user).order(created_at: :desc).page(params[:page]).per(15)
+      @posts = if current_user
+      current_user.feed.includes(:user).page(params[:page]).order(created_at: :desc)
+      else
+        Post.all.includes(:user).page(params[:page]).order(created_at: :desc)
+      end
+      @users = User.recent(5)
     end
 
     def new
@@ -8,6 +13,7 @@ class PostsController < ApplicationController
     end
 
     def create
+      return redirect_to login_path unless current_user
         @post = current_user.posts.build(post_params)
       if @post.save
         redirect_to posts_path, success: '投稿しました'

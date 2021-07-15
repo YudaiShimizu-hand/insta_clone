@@ -30,4 +30,5 @@ class Post < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_many :likes, dependent: :destroy
 
+    scope :feed_of, ->(user) { where(user_id: user.following_ids << user.id) }
 end
