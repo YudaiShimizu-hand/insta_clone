@@ -31,4 +31,5 @@ class Post < ApplicationRecord
     has_many :likes, dependent: :destroy
 
     scope :feed_of, ->(user) { where(user_id: user.following_ids << user.id) }
+    scope :body_contain, ->(word) { where('body LIKE ?', "%#{word}%") }
 end

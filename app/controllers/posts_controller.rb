@@ -5,7 +5,10 @@ class PostsController < ApplicationController
       else
         Post.all.includes(:user).page(params[:page]).order(created_at: :desc)
       end
-      @users = User.recent(5)
+    end
+
+    def search
+      @posts = Post.body_contain(search_post_params[:body]).includes(:user).page(params[:page])
     end
 
     def new
@@ -54,5 +57,9 @@ class PostsController < ApplicationController
     def post_params
         # images:[]とすることで、JSON形式でparamsを受け取る
         params.require(:post).permit(:body, {images: []})
+    end
+
+    def search_post_params
+      params.fetch(:q, {}).permit(:body)
     end
 end

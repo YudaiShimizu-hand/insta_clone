@@ -15,6 +15,7 @@ resources :posts, shallow: true do
   resources :likes
   collection do
     get :like_posts
+    get :search
   end
 end
 
